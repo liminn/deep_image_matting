@@ -18,18 +18,18 @@ TRAINNING:
   SPECIFIC_GPU_NUM: 1
   INITIAL_LR: None
   BATCH_SIZE: 10
-  PATIENCE: 10
+  PATIENCE: 5
   EPOCHS: 500
 
 ### 4.Checkpoint
 CHECKPOINT:
   MODEL_DIR_BASE: 'checkpoint'
-  MODEL_DIR: 'together_20190505'
+  MODEL_DIR: 'together_20190507'
   TRAIN_PAIR_DIR: 'vis_train_pair'
   VALID_PAIR_DIR: 'vis_valid_pair'
 
 ### 5.Test
 TEST:
-  CKPT_PATH: "./checkpoint/together_20190505/model-58-0.0892.hdf5"
+  CKPT_PATH: "./checkpoint/together_20190507/model-91-0.0800.hdf5"
   TEST_RESULT_DIR_BASE: './inference_outout'
 

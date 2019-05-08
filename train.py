@@ -19,7 +19,7 @@ if __name__ == '__main__':
         cfg = yaml.load(yaml_file.read())
         #print(cfg.items())
 
-    # Use specific GPU
+    #Use specific GPU
     if cfg["TRAINNING"]["SPECIFIC_GPU_NUM"] is not None:
         os.environ["CUDA_VISIBLE_DEVICES"] = str(cfg["TRAINNING"]["SPECIFIC_GPU_NUM"])
 

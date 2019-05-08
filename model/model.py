@@ -112,13 +112,13 @@ def build_refinement(encoder_decoder):
     input_tensor = encoder_decoder.input                           
     input = Lambda(lambda i: i[:, :, :, 0:3])(input_tensor)       
     x = Concatenate(axis=3)([input, encoder_decoder.output])       
-    x = Conv2D(64, (3, 3), activation='relu', padding='same', kernel_initializer='he_normal',
+    x = Conv2D(64, (3, 3), activation='relu', padding='same', name='refine_conv_1',kernel_initializer='he_normal',
                bias_initializer='zeros')(x)                       
     x = BatchNormalization()(x)                                    
-    x = Conv2D(64, (3, 3), activation='relu', padding='same', kernel_initializer='he_normal',
+    x = Conv2D(64, (3, 3), activation='relu', padding='same', name='refine_conv_2',kernel_initializer='he_normal',
                bias_initializer='zeros')(x)                        
     x = BatchNormalization()(x)                                    
-    x = Conv2D(64, (3, 3), activation='relu', padding='same', kernel_initializer='he_normal',
+    x = Conv2D(64, (3, 3), activation='relu', padding='same', name='refine_conv_3',kernel_initializer='he_normal',
                bias_initializer='zeros')(x)                       
     x = BatchNormalization()(x)                                    
     x = Conv2D(1, (3, 3), activation='sigmoid', padding='same', name='refinement_pred', kernel_initializer='he_normal',
